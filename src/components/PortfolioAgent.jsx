@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { answerQuestion, topics } from '../agent/knowledge';
+import { askAI } from '../api';
 import { person } from '../data';
 
 const GREETING = `Hi, I'm the portfolio assistant. I can answer questions about ${person.name}'s CV, skills, experience, projects and contact details. Pick a topic or type a question.`;
@@ -30,6 +31,7 @@ export default function PortfolioAgent() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([{ from: 'bot', text: GREETING }]);
   const [input, setInput] = useState('');
+  const [thinking, setThinking] = useState(false);
   const listRef = useRef(null);
   const toggleRef = useRef(null);
 
@@ -54,7 +56,25 @@ export default function PortfolioAgent() {
     setInput('');
   };
 
-  const onSubmit = (e) => { e.preventDefault(); ask(input); };
+  // Typed questions go to the AI backend (Groq, via Apps Script). If it is unavailable, use the built-in answers.
+  const askFree = async (question) => {
+    const text = question.trim();
+    if (!text || thinking) return;
+    setMessages((m) => [...m, { from: 'user', text }]);
+    setInput('');
+    setThinking(true);
+    try {
+      const answer = await askAI(text);
+      setMessages((m) => [...m, { from: 'bot', text: answer }]);
+    } catch {
+      const { text: reply, refused } = answerQuestion(text);
+      setMessages((m) => [...m, { from: 'bot', text: reply, refused }]);
+    } finally {
+      setThinking(false);
+    }
+  };
+
+  const onSubmit = (e) => { e.preventDefault(); askFree(input); };
 
   if (!open) {
     return (
@@ -106,6 +126,11 @@ export default function PortfolioAgent() {
               {m.text}
             </div>
           ))}
+          {thinking && (
+            <div aria-label="Assistant is typing" style={{ justifySelf: 'start', background: 'var(--bg)', border: '1px solid var(--line)', borderRadius: 14, padding: '10px 14px', display: 'flex', gap: 4 }}>
+              <i className="pa-dot" style={dot} /><i className="pa-dot" style={dot} /><i className="pa-dot" style={dot} />
+            </div>
+          )}
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, padding: '0 16px 12px' }}>
@@ -119,7 +144,7 @@ export default function PortfolioAgent() {
           <input id="agent-q" value={input} onChange={(e) => setInput(e.target.value)} maxLength={200}
             placeholder="Ask about skills, projects, experience…" autoComplete="off"
             style={{ flex: 1, minWidth: 0, background: 'var(--bg)', color: 'var(--ink)', border: '1px solid var(--line)', borderRadius: 10, padding: '10px 12px', fontSize: 14, minHeight: 44 }} />
-          <button type="submit" style={{ ...pill, padding: '0 14px', fontSize: 14 }}>Send</button>
+          <button type="submit" disabled={thinking} style={{ ...pill, padding: '0 14px', fontSize: 14, opacity: thinking ? 0.6 : 1 }}>Send</button>
         </form>
       </section>
     </div>
