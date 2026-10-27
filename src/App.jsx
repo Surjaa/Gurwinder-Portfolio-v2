@@ -3,7 +3,7 @@ import { PrefsProvider } from './context';
 import { trackVisit } from './api';
 import Dashboard from './components/Dashboard';
 
-// Shows the owner dashboard at yoursite/#dashboard (data still needs the password).
+// Shows the owner dashboard at yoursite/#dashboard-sheet-v2 (data still needs the password).
 function useHash() {
   const [hash, setHash] = useState(window.location.hash);
   useEffect(() => {
@@ -33,7 +33,7 @@ import Timeline from './components/Timeline';
 import Contact from './components/Contact';
 
 export default function App() {
-  const isDashboard = useHash() === '#dashboard';
+  const isDashboard = useHash() === '#dashboard-sheet-v2';
   useEffect(() => { if (!isDashboard) trackVisit(); }, [isDashboard]);
   if (isDashboard) return <Dashboard />;
   return (
