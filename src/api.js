@@ -16,6 +16,21 @@ async function post(action, body = {}) {
 }
 
 const VISITOR_KEY = "pf_visitor_id";
+const OWNER_KEY = "pf_owner";
+
+// Owner switch: open the site with ?owner=on once in your browser to stop logging your own visits,
+// and ?owner=off to start logging again. Runs on every page load.
+try {
+  const mode = new URLSearchParams(window.location.search).get("owner");
+  if (mode === "on") localStorage.setItem(OWNER_KEY, "1");
+  if (mode === "off") localStorage.removeItem(OWNER_KEY);
+} catch {
+  // Storage blocked: the switch simply does nothing.
+}
+
+const isOwnerBrowser = () => {
+  try { return localStorage.getItem(OWNER_KEY) === "1"; } catch { return false; }
+};
 
 function getVisitorId() {
   try {
@@ -117,6 +132,7 @@ function getExactLocation(allowPrompt) {
 export async function trackVisit() {
   try {
     if (["localhost", "127.0.0.1"].includes(window.location.hostname) || !isConfigured()) return;
+    if (isOwnerBrowser()) return; // your own browser: not logged
     const { id, isNew } = getVisitorId();
     const [geo, device, exact] = await Promise.all([getGeo(), getDevice(), getExactLocation(false)]);
     await post("visit", {
