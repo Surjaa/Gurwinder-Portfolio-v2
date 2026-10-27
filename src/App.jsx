@@ -1,6 +1,18 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { PrefsProvider } from './context';
 import { trackVisit } from './api';
+import Dashboard from './components/Dashboard';
+
+// Shows the owner dashboard at yoursite/#dashboard (data still needs the password).
+function useHash() {
+  const [hash, setHash] = useState(window.location.hash);
+  useEffect(() => {
+    const onChange = () => setHash(window.location.hash);
+    window.addEventListener('hashchange', onChange);
+    return () => window.removeEventListener('hashchange', onChange);
+  }, []);
+  return hash;
+}
 import Cursor from './components/Cursor';
 import Background from './components/Background';
 import Intro from './components/Intro';
@@ -21,7 +33,9 @@ import Timeline from './components/Timeline';
 import Contact from './components/Contact';
 
 export default function App() {
-  useEffect(() => { trackVisit(); }, []);
+  const isDashboard = useHash() === '#dashboard';
+  useEffect(() => { if (!isDashboard) trackVisit(); }, [isDashboard]);
+  if (isDashboard) return <Dashboard />;
   return (
     <PrefsProvider>
       <Intro />
