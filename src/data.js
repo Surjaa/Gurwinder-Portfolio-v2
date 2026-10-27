@@ -29,7 +29,7 @@ export const navItems = [
 ];
 
 export const heroStats = [
-  { value: 5, suffix: '', label: 'Featured projects', hint: 'Apps and dashboards you can open today' },
+  { value: 7, suffix: '', label: 'Featured projects', hint: 'Apps and dashboards you can open today' },
   { value: 16, suffix: '', label: 'Live demos online', hint: 'Web tools and 3D games you can play' },
   { value: 3, suffix: '+', label: 'Years building for the web', hint: 'Web and writing experience' },
   { value: 1, suffix: '', label: 'Award', hint: 'Best HTML & CSS Framework Developer, 2022' },
@@ -171,7 +171,7 @@ export const bizPillars = [
 
 export const bizCounters = [
   { value: 3, suffix: '+', label: 'Years of reporting and web work' },
-  { value: 5, suffix: '', label: 'Featured apps and dashboards' },
+  { value: 7, suffix: '', label: 'Featured apps and dashboards' },
   { value: 3, suffix: '', label: 'Business systems built: FMS, IMS, PMS' },
 ];
 
@@ -183,8 +183,30 @@ export const processSteps = [
   { title: 'Test and ship', plain: 'Check on phone, tablet and desktop, then publish.' },
 ];
 
-// Five featured projects. "plain" is the one-line explanation for non-technical visitors.
+// Seven featured projects. "plain" is the one-line explanation for non-technical visitors.
 export const projects = [
+  {
+    id: 'stockpulse',
+    title: 'StockPulse Inventory & Reorder Dashboard',
+    kind: 'Full stack inventory app',
+    tone: 'teal',
+    plain: 'Track stock across warehouses, get low-stock alerts and see what to reorder, all in one dashboard.',
+    summary:
+      'A full stack inventory management dashboard. It records stock in, stock out and adjustments for every warehouse, values the stock, and flags products that are low, out of stock or due for purchase.',
+    features: [
+      'Dashboard with stock health KPIs, daily stock in vs out charts, stock value by warehouse and category, and top movers',
+      'Products with SKU, cost, price, reorder levels and suppliers, plus search, category filter and CSV export',
+      'Stock movements for IN, OUT and ADJUSTMENT across Main Warehouse, Cold Store and Overflow Depot, with date and type filters',
+      'Low-stock and reorder alerts, purchase suggestions, and login with admin and staff roles',
+    ],
+    stack: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Recharts', 'JWT'],
+    live: 'https://stockpulse-bnym.onrender.com/',
+    shots: [
+      ['images/shots/stockpulse-dashboard.webp', 'Dashboard'],
+      ['images/shots/stockpulse-products.webp', 'Products'],
+      ['images/shots/stockpulse-movements.webp', 'Movements'],
+    ],
+  },
   {
     id: 'erp',
     title: 'ERP Business Management System',
