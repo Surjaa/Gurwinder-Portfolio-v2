@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { PrefsProvider } from './context';
+import { trackVisit } from './api';
 import Cursor from './components/Cursor';
 import Background from './components/Background';
 import Intro from './components/Intro';
@@ -19,6 +21,7 @@ import Timeline from './components/Timeline';
 import Contact from './components/Contact';
 
 export default function App() {
+  useEffect(() => { trackVisit(); }, []);
   return (
     <PrefsProvider>
       <Intro />
