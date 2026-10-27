@@ -149,3 +149,7 @@ export async function askAI(question) {
   if (!res.ok) throw new Error(res.error || "AI unavailable");
   return res.answer;
 }
+
+export async function getStats(token) {
+  return post("stats", { token });
+}
