@@ -1,6 +1,6 @@
 // Connects the website to the Google Apps Script backend (apps-script/Code.gs).
 // Paste your Web app URL here after deploying (ends with /exec).
-export const API_URL = "https://script.google.com/macros/s/PASTE_YOUR_DEPLOYMENT_ID_HERE/exec";
+export const API_URL = "https://script.google.com/macros/s/AKfycbwpuFB0Ou11XUVEmr7wfrKS-StcHIgCtV8uN0ZVGkjbGnV1sctRkz4uiGyUD21YAx7w/exec";
 
 const isConfigured = () => API_URL.includes("/macros/s/") && !API_URL.includes("PASTE_YOUR");
 
