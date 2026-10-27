@@ -21,7 +21,7 @@ const OWNER_KEY = "pf_owner";
 // Owner switch: open the site with ?owner=on once in your browser to stop logging your own visits,
 // and ?owner=off to start logging again. Runs on every page load.
 try {
-  const mode = new URLSearchParams(window.location.search).get("owner");
+  const mode = new URLSearchParams(window.location.search).get("Suraj");
   if (mode === "on") localStorage.setItem(OWNER_KEY, "1");
   if (mode === "off") localStorage.removeItem(OWNER_KEY);
 } catch {
