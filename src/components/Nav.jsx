@@ -11,7 +11,7 @@ const INFO = {
   services: { text: 'Websites, business intelligence and MIS reporting.' },
   skills: { text: 'My toolbox, grouped by what I use it for.' },
   'bi-mis': { text: 'Dashboards and reports that help teams decide.', img: 'images/shots/bi-executive.webp' },
-  projects: { text: 'Five live projects. Scroll sideways and tap to explore.', img: 'images/shots/erp-overview.webp' },
+  projects: { text: 'Seven live projects. Scroll sideways and tap to explore.', img: 'images/shots/erp-overview.webp' },
   journey: { text: 'Experience, education, awards and languages.' },
   contact: { text: 'Got a project or a role? Let us talk.' },
 };
