@@ -1,20 +1,12 @@
 import Magnetic from "./Magnetic";
 import Heading from "./Heading";
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
+import { sendContact } from "../api";
 import { person } from "../data";
 import PlainNote from "./PlainNote";
 
-// Fill these in from your EmailJS dashboard.
-const EMAILJS = {
-  serviceId: "service_pra81fk",
-  ownerTemplateId: "template_v8wj3yb",
-  replyTemplateId: "template_9doii34",
-  publicKey: "hjDYho1Zz-aNreUSw",
-};
-
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "", website: "" });
   const [copied, setCopied] = useState(false);
   const [sending, setSending] = useState(false);
   const [popup, setPopup] = useState(false);
@@ -26,27 +18,15 @@ export default function Contact() {
     setSending(true);
     setError("");
     try {
-      const params = {
-        from_name: form.name,
-        from_email: form.email,
-        message: form.message,
-      };
-      await Promise.all([
-        emailjs.send(EMAILJS.serviceId, EMAILJS.ownerTemplateId, params, {
-          publicKey: EMAILJS.publicKey,
-        }),
-        emailjs.send(
-          EMAILJS.serviceId,
-          EMAILJS.replyTemplateId,
-          { ...params, to_name: form.name, to_email: form.email },
-          { publicKey: EMAILJS.publicKey },
-        ),
-      ]);
-      setForm({ name: "", email: "", message: "" });
+      const res = await sendContact(form);
+      if (!res.ok) throw new Error(res.error);
+      setForm({ name: "", email: "", message: "", website: "" });
       setPopup(true);
-    } catch {
+    } catch (err) {
       setError(
-        "Message could not be sent. Please try again, or use Copy email.",
+        err?.message && err.message !== "Failed to fetch"
+          ? err.message
+          : "Message could not be sent. Please try again, or use Copy email.",
       );
     } finally {
       setSending(false);
@@ -92,6 +72,17 @@ export default function Contact() {
         <div className="row g-4">
           <div className="col-12 col-lg-7">
             <form onSubmit={onSubmit} className="d-grid gap-4">
+              {/* Honeypot: hidden from people, bots tend to fill it in */}
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                value={form.website}
+                onChange={update("website")}
+                style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+              />
               <div>
                 <label htmlFor="c-name" className="eyebrow">
                   Name
@@ -145,7 +136,7 @@ export default function Contact() {
                 </p>
               )}
             </form>
-            <PlainNote>Your message is sent straight from this page.</PlainNote>
+            <PlainNote>Your message goes straight to my inbox, and you get an automatic confirmation email.</PlainNote>
           </div>
           <div className="col-12 col-lg-5">
             <p className="eyebrow mb-2">Email</p>
