@@ -308,6 +308,16 @@ button {
   transform: translateY(-3px);
   border-color: var(--accent);
 }
+.tile-text {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.tile-text small {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
 .game {
   display: grid;
   gap: 18px;
