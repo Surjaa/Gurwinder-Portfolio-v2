@@ -156,7 +156,7 @@ export default function Projects() {
             <h3 className="group-title">Web Projects <span>{webs.length}</span></h3>
             <div className="row g-3">
               {webs.map((r) => (
-                <div className="col-12 col-sm-6 col-lg-4" key={r.repo}>
+                <div className="col-12 col-sm-6 col-lg-4 d-flex" key={r.repo}>
                   <a className="tile" href={liveUrl(r)} target="_blank" rel="noopener noreferrer"><span className="tile-text"><strong>{r.title}</strong><small>{r.desc}</small></span><span aria-hidden="true">↗</span></a>
                 </div>
               ))}
@@ -164,7 +164,7 @@ export default function Projects() {
             <h3 className="group-title">Web Games <span>{games.length}</span></h3>
             <div className="row g-3">
               {games.map((r) => (
-                <div className="col-12 col-sm-6 col-lg-4" key={r.repo}>
+                <div className="col-12 col-sm-6 col-lg-4 d-flex" key={r.repo}>
                   <a className="tile" href={liveUrl(r)} target="_blank" rel="noopener noreferrer"><span className="tile-text"><strong>{r.title}</strong><small>{r.desc}</small></span><span aria-hidden="true">↗</span></a>
                 </div>
               ))}
