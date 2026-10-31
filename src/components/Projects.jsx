@@ -157,7 +157,7 @@ export default function Projects() {
             <div className="row g-3">
               {webs.map((r) => (
                 <div className="col-12 col-sm-6 col-lg-4" key={r.repo}>
-                  <a className="tile" href={liveUrl(r)} target="_blank" rel="noopener noreferrer"><strong>{r.title}</strong><span aria-hidden="true">↗</span></a>
+                  <a className="tile" href={liveUrl(r)} target="_blank" rel="noopener noreferrer"><span className="tile-text"><strong>{r.title}</strong><small>{r.desc}</small></span><span aria-hidden="true">↗</span></a>
                 </div>
               ))}
             </div>
@@ -165,7 +165,7 @@ export default function Projects() {
             <div className="row g-3">
               {games.map((r) => (
                 <div className="col-12 col-sm-6 col-lg-4" key={r.repo}>
-                  <a className="tile" href={liveUrl(r)} target="_blank" rel="noopener noreferrer"><strong>{r.title}</strong><span aria-hidden="true">↗</span></a>
+                  <a className="tile" href={liveUrl(r)} target="_blank" rel="noopener noreferrer"><span className="tile-text"><strong>{r.title}</strong><small>{r.desc}</small></span><span aria-hidden="true">↗</span></a>
                 </div>
               ))}
             </div>
