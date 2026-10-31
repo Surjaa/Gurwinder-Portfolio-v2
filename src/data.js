@@ -29,8 +29,8 @@ export const navItems = [
 ];
 
 export const heroStats = [
-  { value: 7, suffix: '', label: 'Featured projects', hint: 'Apps and dashboards you can open today' },
-  { value: 17, suffix: '', label: 'Live demos online', hint: 'Web tools and 3D games you can play' },
+  { value: 8, suffix: '', label: 'Featured projects', hint: 'Apps and dashboards you can open today' },
+  { value: 18, suffix: '', label: 'Live demos online', hint: 'Web tools and 3D games you can play' },
   { value: 3, suffix: '+', label: 'Years building for the web', hint: 'Web and writing experience' },
   { value: 1, suffix: '', label: 'Award', hint: 'Best HTML & CSS Framework Developer, 2022' },
 ];
@@ -171,7 +171,7 @@ export const bizPillars = [
 
 export const bizCounters = [
   { value: 3, suffix: '+', label: 'Years of reporting and web work' },
-  { value: 7, suffix: '', label: 'Featured apps and dashboards' },
+  { value: 8, suffix: '', label: 'Featured apps and dashboards' },
   { value: 3, suffix: '', label: 'Business systems built: FMS, IMS, PMS' },
 ];
 
@@ -183,7 +183,7 @@ export const processSteps = [
   { title: 'Test and ship', plain: 'Check on phone, tablet and desktop, then publish.' },
 ];
 
-// Seven featured projects. "plain" is the one-line explanation for non-technical visitors.
+// Eight featured projects. "plain" is the one-line explanation for non-technical visitors.
 export const projects = [
   {
     id: 'stockpulse',
@@ -340,28 +340,49 @@ export const projects = [
       ['images/shots/blog-community.webp', 'Community'],
     ],
   },
+  {
+    id: 'parscore',
+    title: 'ParScore',
+    kind: 'Content analytics app',
+    tone: 'violet',
+    plain: 'Scores every video against its own channel and writes a report your team can act on.',
+    summary:
+      'A cross-platform content analytics app. It pulls public data, scores each video against its own channel average, compares accounts, and writes a report with a chat agent you can ask questions.',
+    features: [
+      'Scores each video against its channel average: 100 is average, 110 or more is strong, below 80 is underperforming',
+      'Compares accounts across YouTube and GitHub, with subscribers, views, followers, stars and forks',
+      'Written report plus a chat agent that answers questions about the analysis',
+      'Runs on sample data with zero keys, saves snapshots to PostgreSQL, and has a 3D hero in a dark theme',
+    ],
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'React Three Fiber', 'Node.js', 'Express', 'PostgreSQL'],
+    live: 'https://parscore-9q96.onrender.com/',
+    shots: [
+      ['images/shots/parscore-preview.webp', 'Dashboard'],
+    ],
+  },
 ];
 
-// Every other repository, shown under "View all projects".
+// Every other repository, shown under "View all projects". "desc" is the short description shown on each tile.
 export const repos = [
-  { title: 'StockPulse Inventory & Reorder Dashboard', repo: 'stockpulse', url: 'https://stockpulse-bnym.onrender.com/', group: 'web', live: true },
-  { title: 'ERP Business Management System', repo: 'ERP---Business-Management-System.github.io', group: 'web', live: true },
-  { title: 'Portfolio Website (v1)', repo: 'Gurwinder-portfolio.github.io', group: 'web', live: true },
-  { title: 'Project Management Application', repo: 'Project-Management-Application.github.io', group: 'web', live: true },
-  { title: 'BI Analytics Portal', repo: 'BI-Analytics-Portal.github.io', group: 'web', live: true },
-  { title: 'Larder Store', repo: 'Larder-store.github.io', group: 'web', live: true },
-  { title: 'Blogging Dashboard', repo: 'Blogging-Dashboard.github.io', group: 'web', live: true },
-  { title: 'Enterprise SaaS Dashboard', repo: 'Enterprise-SaaS-Dashboard.github.io', group: 'web', live: true },
-  { title: 'Security Score App', repo: 'Security-Score-App.github.io', group: 'web', live: true },
-  { title: 'Music App', repo: 'Music-app', group: 'web', live: true },
-  { title: 'Coffee Website', repo: 'Coffee-website.github.io', group: 'web', live: true },
-  { title: 'Rock Paper Scissor 3D', repo: 'Rock-Paper-Scissor.io', group: 'games', live: true },
-  { title: 'Snake 3D', repo: 'Snake-3D.io', group: 'games', live: true },
-  { title: 'Canon Armed', repo: 'Canon-armed.io', group: 'games', live: true },
-  { title: 'Chroma Tilt', repo: 'ChromaTilt.io', group: 'games', live: true },
-  { title: 'Relay Stack 2027', repo: 'Relay-stack.io', group: 'games', live: true },
-  { title: 'Prism Path', repo: 'Prism-path.io', group: 'games', live: true },
-  { title: 'GitHub Profile', repo: 'Surjaa', group: 'web', live: false },
+  { title: 'ParScore', repo: 'parscore', url: 'https://parscore-9q96.onrender.com/', group: 'web', live: true, desc: 'Scores every video against its own channel and writes an AI report your team can act on.' },
+  { title: 'StockPulse Inventory & Reorder Dashboard', repo: 'stockpulse', url: 'https://stockpulse-bnym.onrender.com/', group: 'web', live: true, desc: 'Track stock across warehouses, get low-stock alerts and see what to reorder.' },
+  { title: 'ERP Business Management System', repo: 'ERP---Business-Management-System.github.io', group: 'web', live: true, desc: 'One app for buying, stock, sales, accounts and staff, instead of many spreadsheets.' },
+  { title: 'Portfolio Website (v1)', repo: 'Gurwinder-portfolio.github.io', group: 'web', live: true, desc: 'The first version of this portfolio, before the current v2 rebuild.' },
+  { title: 'Project Management Application', repo: 'Project-Management-Application.github.io', group: 'web', live: true, desc: 'A Kanban board where each task glows by how urgent it is.' },
+  { title: 'BI Analytics Portal', repo: 'BI-Analytics-Portal.github.io', group: 'web', live: true, desc: 'A Power BI style report room with seven pages, drill-downs and hand-built charts.' },
+  { title: 'Larder Store', repo: 'Larder-store.github.io', group: 'web', live: true, desc: 'An online grocery shop with a cart, four-step checkout and order saving.' },
+  { title: 'Blogging Dashboard', repo: 'Blogging-Dashboard.github.io', group: 'web', live: true, desc: 'A writer\'s home for posts, drafts, writing streaks and word counts.' },
+  { title: 'Enterprise SaaS Dashboard', repo: 'Enterprise-SaaS-Dashboard.github.io', group: 'web', live: true, desc: 'A B2B commerce dashboard with a live business pulse score and SVG charts.' },
+  { title: 'Security Score App', repo: 'Security-Score-App.github.io', group: 'web', live: true, desc: 'A web app built around a security score.' },
+  { title: 'Music App', repo: 'Music-app', group: 'web', live: true, desc: 'A web app for music.' },
+  { title: 'Coffee Website', repo: 'Coffee-website.github.io', group: 'web', live: true, desc: 'A website for a coffee brand.' },
+  { title: 'Rock Paper Scissor 3D', repo: 'Rock-Paper-Scissor.io', group: 'games', live: true, desc: 'The classic hand game, played in 3D in the browser.' },
+  { title: 'Snake 3D', repo: 'Snake-3D.io', group: 'games', live: true, desc: 'The classic snake game, played in 3D in the browser.' },
+  { title: 'Canon Armed', repo: 'Canon-armed.io', group: 'games', live: true, desc: 'A browser game. Open the live demo to play.' },
+  { title: 'Chroma Tilt', repo: 'ChromaTilt.io', group: 'games', live: true, desc: 'A browser game. Open the live demo to play.' },
+  { title: 'Relay Stack 2027', repo: 'Relay-stack.io', group: 'games', live: true, desc: 'A browser game. Open the live demo to play.' },
+  { title: 'Prism Path', repo: 'Prism-path.io', group: 'games', live: true, desc: 'A browser game. Open the live demo to play.' },
+  { title: 'GitHub Profile', repo: 'Surjaa', group: 'web', live: false, desc: 'My GitHub profile with all the repositories.' },
 ];
 
 export const certs = [
