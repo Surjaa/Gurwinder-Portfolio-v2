@@ -29,7 +29,7 @@ export const navItems = [
 ];
 
 export const heroStats = [
-  { value: 8, suffix: '', label: 'Featured projects', hint: 'Apps and dashboards you can open today' },
+  { value: 9, suffix: '', label: 'Featured projects', hint: 'Apps and dashboards you can open today' },
   { value: 18, suffix: '', label: 'Live demos online', hint: 'Web tools and 3D games you can play' },
   { value: 3, suffix: '+', label: 'Years building for the web', hint: 'Web and writing experience' },
   { value: 1, suffix: '', label: 'Award', hint: 'Best HTML & CSS Framework Developer, 2022' },
@@ -183,8 +183,29 @@ export const processSteps = [
   { title: 'Test and ship', plain: 'Check on phone, tablet and desktop, then publish.' },
 ];
 
-// Eight featured projects. "plain" is the one-line explanation for non-technical visitors.
+// Nine featured projects. "plain" is the one-line explanation for non-technical visitors.
 export const projects = [
+  {
+    id: 'fms',
+    title: 'FMS Engine Operations Workflow System',
+    kind: 'Workflow engine',
+    tone: 'coral',
+    plain: 'Turns a multi-step process into tracked stages, where each stage unlocks only after sign-off.',
+    summary:
+      'A workflow engine for running multi-stage operations in a plant. Each stage has an owner and a Google Form, and the next stage stays locked until a reviewer signs off the previous one. A live dashboard shows what is running, late or waiting.',
+    features: [
+      'Workflow builder that creates a process from a PDF, a ZIP of stage files, or stage by stage; stage 01 starts ready and later stages stay locked',
+      'Each stage emails its Google Form link to the responsible person, with planned due times, actual start and completion, and delay tracked per stage',
+      'Live dashboard with stage status, on-time rate, average delay per process, overdue counts and reviewer exceptions, plus workflow diagrams in Reports',
+      'Google Workspace sign-in limited to the company domain, role-based access, and an audit trail of every action',
+    ],
+    stack: ['React', 'TypeScript', 'Vite', 'Node.js', 'Express', 'PostgreSQL', 'Nodemailer'],
+    shots: [
+      ['images/shots/fms-dashboard.webp', 'Dashboard'],
+      ['images/shots/fms-reports.webp', 'Reports'],
+      ['images/shots/fms-catalog.webp', 'Catalog'],
+    ],
+  },
   {
     id: 'stockpulse',
     title: 'StockPulse Inventory & Reorder Dashboard',
