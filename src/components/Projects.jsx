@@ -121,7 +121,7 @@ export default function Projects() {
                 <p>{p.plain}</p>
                 <div className="d-flex gap-2 flex-wrap">
                   <button type="button" className="btn-pill ghost" onClick={() => setDetail(p)}>Details</button>
-                  <a className="btn-pill" href={p.live} target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+                  {p.live && <a className="btn-pill" href={p.live} target="_blank" rel="noopener noreferrer">Live demo ↗</a>}
                 </div>
               </div>
             </article>
@@ -142,7 +142,7 @@ export default function Projects() {
             <div className="shelf-tabs mb-4">
               {detail.stack.map((t) => <span key={t} className="chip">{t}</span>)}
             </div>
-            <a className="btn-pill" href={detail.live} target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+            {detail.live && <a className="btn-pill" href={detail.live} target="_blank" rel="noopener noreferrer">Live demo ↗</a>}
           </div>
         )}
       </dialog>
