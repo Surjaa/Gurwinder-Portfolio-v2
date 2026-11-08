@@ -5,8 +5,20 @@ import Counter from './Counter';
 import './classic-hero.css';
 
 const WORDS = ['responsive websites', 'BI dashboards', 'web applications', 'business systems'];
-const CHIPS = ['HTML5', 'CSS3', 'JavaScript', 'React', 'Bootstrap', 'Git'];
-const CODE = "const developer = {\n  name: 'Gurwinder Parhar',\n  role: 'Full Stack Developer',\n  stack: ['HTML5', 'CSS3', 'JS', 'React'],\n  openToWork: true,\n};";
+const CHIPS = ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Git'];
+const CODE = "const developer = {\n  name: 'Gurwinder Parhar',\n  role: 'Full Stack Developer',\n  stack: [\n    'React', 'TypeScript',\n    'Node.js', 'Express',\n    'PostgreSQL', 'JavaScript',\n  ],\n  openToWork: true,\n};";
+
+// Colours the typed code: strings, keys and keywords each get their own accent.
+const TOKEN = /('[^']*'|\b(?:const|true)\b|\b\w+(?=:))/;
+function paint(text) {
+  return text.split(TOKEN).map((part, i) => {
+    if (!part) return null;
+    if (i % 2 === 0) return <span key={i}>{part}</span>;
+    if (part[0] === "'") return <span key={i} className="ch-tok-str">{part}</span>;
+    if (part === 'const' || part === 'true') return <span key={i} className="ch-tok-kw">{part}</span>;
+    return <span key={i} className="ch-tok-key">{part}</span>;
+  });
+}
 
 // Types the code card one character at a time (shows all of it at once with reduced motion).
 function useTyped(text, reduce) {
@@ -95,7 +107,7 @@ export default function Hero() {
               </div>
               <div className="ch-code" aria-hidden="true">
                 <div className="ch-code-bar"><i /><i /><i /><span>developer.js</span></div>
-                <pre>{code}</pre>
+                <pre>{paint(code)}</pre>
               </div>
             </div>
           </div>

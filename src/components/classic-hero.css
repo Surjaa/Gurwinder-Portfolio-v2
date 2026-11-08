@@ -242,6 +242,15 @@
   overflow-x: auto;
   min-height: 9.5em;
 }
+.ch-tok-str {
+  color: var(--teal);
+}
+.ch-tok-key {
+  color: var(--sun);
+}
+.ch-tok-kw {
+  color: var(--coral);
+}
 .ch-scroll {
   position: absolute;
   left: 50%;
