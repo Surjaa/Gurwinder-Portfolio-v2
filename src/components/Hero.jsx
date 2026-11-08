@@ -6,7 +6,7 @@ import './classic-hero.css';
 
 const WORDS = ['responsive websites', 'BI dashboards', 'web applications', 'business systems'];
 const CHIPS = ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Git'];
-const CODE = "const developer = {\n  name: 'Gurwinder Parhar',\n  role: 'Full Stack Developer',\n  stack: [\n    'React', 'TypeScript',\n    'Node.js', 'Express',\n    'PostgreSQL', 'JavaScript',\n  ],\n  openToWork: true,\n};";
+const CODE = "const developer = {\n  name: 'Gurwinder Parhar',\n  role: 'Full Stack Developer',\n  stack: ['React', 'TypeScript', 'Node.js',\n    'Express', 'PostgreSQL', 'JavaScript'],\n  openToWork: true,\n};";
 
 // Colours the typed code: strings, keys and keywords each get their own accent.
 const TOKEN = /('[^']*'|\b(?:const|true)\b|\b\w+(?=:))/;

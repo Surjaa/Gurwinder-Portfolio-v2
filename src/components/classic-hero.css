@@ -197,7 +197,7 @@
   position: absolute;
   left: -28%;
   bottom: -22%;
-  width: min(272px, 62vw);
+  width: min(340px, 80vw);
   z-index: 3;
   background: #14122e;
   color: #e8e4ff;
