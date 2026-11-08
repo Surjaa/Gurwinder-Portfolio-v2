@@ -199,6 +199,7 @@ export const projects = [
       'Live dashboard with stage status, on-time rate, average delay per process, overdue counts and reviewer exceptions, plus workflow diagrams in Reports',
       'Google Workspace sign-in limited to the company domain, role-based access, and an audit trail of every action',
     ],
+    live: 'https://fms-engine.onrender.com/',
     stack: ['React', 'TypeScript', 'Vite', 'Node.js', 'Express', 'PostgreSQL', 'Nodemailer'],
     shots: [
       ['images/shots/fms-dashboard.webp', 'Dashboard'],
