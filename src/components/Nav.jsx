@@ -52,6 +52,19 @@ export default function Nav() {
   const item = navItems[hover];
   const info = INFO[item.id] || {};
 
+  // Menu link: unlock the page first, then scroll to the section ourselves.
+  // Scrolling while the body is still locked can fail on some mobile browsers.
+  const goTo = (e, id) => {
+    e.preventDefault();
+    document.body.style.overflow = '';
+    setOpen(false);
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+      history.replaceState(null, '', `#${id}`);
+    }
+  };
+
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(person.email);
@@ -114,7 +127,7 @@ export default function Nav() {
                         <li key={n.id} style={{ overflow: 'hidden' }}>
                           <motion.a
                             href={`#${n.id}`}
-                            onClick={() => setOpen(false)}
+                            onClick={(e) => goTo(e, n.id)}
                             onMouseEnter={() => setHover(i)}
                             onFocus={() => setHover(i)}
                             initial={reduce ? false : { y: '110%' }}
