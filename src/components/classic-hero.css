@@ -195,9 +195,9 @@
 }
 .ch-code {
   position: absolute;
-  left: -22%;
-  bottom: -8%;
-  width: min(270px, 62vw);
+  left: -40%;
+  bottom: -58%;
+  width: min(272px, 62vw);
   z-index: 3;
   background: #14122e;
   color: #e8e4ff;
@@ -236,7 +236,7 @@
   margin: 0;
   padding: 1rem 1.1rem;
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   line-height: 1.7;
   white-space: pre;
   overflow-x: auto;
