@@ -195,8 +195,8 @@
 }
 .ch-code {
   position: absolute;
-  left: -40%;
-  bottom: -58%;
+  left: -28%;
+  bottom: -22%;
   width: min(272px, 62vw);
   z-index: 3;
   background: #14122e;
