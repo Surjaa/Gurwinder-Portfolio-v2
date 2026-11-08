@@ -28,7 +28,7 @@ export const intents = [
     keys: ['experience', 'years', 'work', 'worked', 'career', 'job history', 'professional'],
     answer: () =>
       `${bizCounters.map((c) => `${c.value}${c.suffix} ${c.label}`).join('\n• ')}.\n` +
-      `Current role: MIS Executive and Head MDO. Responsibilities:\n${plainList(bizPillars[1].points)}`,
+      `Current role: Full Stack Developer & MIS Executive at Dinero FoodWorks / Century Private Limited (since Sept 2026). Responsibilities:\n${plainList(bizPillars[0].points)}`,
   },
   {
     id: 'bi',
@@ -38,7 +38,7 @@ export const intents = [
   {
     id: 'mis',
     keys: ['mis', 'reporting', 'report', 'kpi', 'operations', 'mdo', 'head mdo'],
-    answer: () => `MIS and operations work:\n${plainList(bizPillars[1].points)}`,
+    answer: () => `MIS and operations work:\n${plainList(bizPillars[0].points)}`,
   },
   {
     id: 'services',
