@@ -30,7 +30,7 @@ export const navItems = [
 
 export const heroStats = [
   { value: 9, suffix: '', label: 'Featured projects', hint: 'Apps and dashboards you can open today' },
-  { value: 18, suffix: '', label: 'Live demos online', hint: 'Web tools and 3D games you can play' },
+  { value: 19, suffix: '', label: 'Live demos online', hint: 'Web tools and 3D games you can play' },
   { value: 3, suffix: '+', label: 'Years building for the web', hint: 'Web and writing experience' },
   { value: 1, suffix: '', label: 'Award', hint: 'Best HTML & CSS Framework Developer, 2022' },
 ];
@@ -150,17 +150,12 @@ export const skillGroups = {
 
 export const bizPillars = [
   {
-    title: 'BI analyst & developer',
+    title: 'Full Stack Developer & MIS Executive',
     points: [
       'Power BI dashboard development and KPI visualization',
       'SQL-based data extraction, transformation and analysis',
       'Excel, Power Query and structured reporting workflows',
       'Dashboard UX that connects business questions with numbers',
-    ],
-  },
-  {
-    title: 'Full Stack Developer & MIS Executive',
-    points: [
       'Daily, weekly and monthly MIS reporting',
       'Management information, KPI tracking and performance reports',
       'Data validation, reconciliation and exception tracking',
@@ -386,6 +381,7 @@ export const projects = [
 
 // Every other repository, shown under "View all projects". "desc" is the short description shown on each tile.
 export const repos = [
+  { title: 'FMS Engine Operations Workflow System', repo: 'fms-engine', url: 'https://fms-engine.onrender.com/', group: 'web', live: true, desc: 'Turns a multi-step plant process into tracked stages, where each stage unlocks only after sign-off.' },
   { title: 'ParScore', repo: 'parscore', url: 'https://parscore-9q96.onrender.com/', group: 'web', live: true, desc: 'Scores every video against its own channel and writes an AI report your team can act on.' },
   { title: 'StockPulse Inventory & Reorder Dashboard', repo: 'stockpulse', url: 'https://stockpulse-bnym.onrender.com/', group: 'web', live: true, desc: 'Track stock across warehouses, get low-stock alerts and see what to reorder.' },
   { title: 'ERP Business Management System', repo: 'ERP---Business-Management-System.github.io', group: 'web', live: true, desc: 'One app for buying, stock, sales, accounts and staff, instead of many spreadsheets.' },
