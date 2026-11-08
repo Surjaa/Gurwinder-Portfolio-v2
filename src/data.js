@@ -159,7 +159,7 @@ export const bizPillars = [
     ],
   },
   {
-    title: 'MIS executive & Head MDO',
+    title: 'Full Stack Developer & MIS Executive',
     points: [
       'Daily, weekly and monthly MIS reporting',
       'Management information, KPI tracking and performance reports',
