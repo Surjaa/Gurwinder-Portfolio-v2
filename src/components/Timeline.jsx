@@ -7,21 +7,24 @@ const steps = [
   { when: '2018 to 2020', title: 'Higher Secondary, Commerce', text: 'Sutlej Public Senior Secondary School, Banga.' },
   { when: 'Aug 2020 to May 2023', title: 'Bachelor of Computer Applications', text: 'Lyallpur Khalsa College, Guru Nanak Dev University, Jalandhar. Studied networking, operating systems, DBMS, software engineering and web technologies.' },
   {
-    when: 'Jan to Mar 2023', title: 'Web Developer, Ansh Infotech', text: 'Ludhiana, Punjab.',
-    bullets: [
-      'Developed and maintained PHP-based web application features using HTML5, CSS3, JavaScript and Bootstrap.',
-      'Improved interface consistency and responsiveness across desktop and mobile devices.',
-      'Implemented UI components and form validation, and assisted with cross-browser testing and front-end performance optimization.',
-    ],
-  },
-  {
-    when: 'Aug 2023 to Jul 2026', title: 'Front-End Developer, The Knowledge Academy (TKA)', text: 'Jalandhar, Punjab.',
+    when: 'Aug 2023 – July 2026', title: 'Front-End Developer', text: 'The Knowledge Academy (TKA), Jalandhar, Punjab, IN.',
     bullets: [
       'Developed responsive, mobile-first interfaces using HTML5, CSS3, JavaScript, React.js and Bootstrap 5.',
       'Built reusable React components, dynamic forms, navigation systems and client-side validation.',
       'Created responsive data tables, interactive charts and dashboard interfaces.',
       'Customized WordPress themes, maintained website functionality, and used Git and GitHub for version control.',
       'Tested and debugged interfaces across mobile, tablet and desktop for usability and cross-browser compatibility.',
+    ],
+  },
+  {
+    when: 'Sept 2026 – Present', title: 'Full Stack Developer & MIS Executive', text: 'Dinero FoodWorks / Century Private Limited, Nawanshahr, Punjab, IN.',
+    bullets: [
+      'Build and maintain the Financial Management System (FMS), Inventory Management System (IMS) and Purchase Management System (PMS) that run daily plant and purchasing workflows.',
+      'Develop backend services and REST APIs with Node.js and Express, backed by PostgreSQL schemas for transactions, stock movements and purchase records.',
+      'Build responsive React and TypeScript interfaces, forms and dashboards that let management track approvals, stock levels and purchase status.',
+      'Design, develop and manage two company websites, covering layout, content, page structure and ongoing updates.',
+      'Support day-to-day operations by fixing issues and updating FMS, IMS and PMS features as business processes change.',
+      'Automate operational reports with Google Sheets, Google Apps Script and triggers, replacing manual data consolidation.',
     ],
   },
 ];
