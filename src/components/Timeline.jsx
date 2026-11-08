@@ -7,6 +7,14 @@ const steps = [
   { when: '2018 to 2020', title: 'Higher Secondary, Commerce', text: 'Sutlej Public Senior Secondary School, Banga.' },
   { when: 'Aug 2020 to May 2023', title: 'Bachelor of Computer Applications', text: 'Lyallpur Khalsa College, Guru Nanak Dev University, Jalandhar. Studied networking, operating systems, DBMS, software engineering and web technologies.' },
   {
+    when: 'Jan 2023 – Mar 2023', title: 'Web Developer', text: 'Ansh Infotech, Ludhiana, Punjab, IN.',
+    bullets: [
+      'Developed and maintained PHP-based web application features using HTML5, CSS3, JavaScript and Bootstrap.',
+      'Improved interface consistency and responsiveness across desktop and mobile devices.',
+      'Implemented UI components and form validation, and assisted with cross-browser testing and front-end performance optimization.',
+    ],
+  },
+  {
     when: 'Aug 2023 – July 2026', title: 'Front-End Developer', text: 'The Knowledge Academy (TKA), Jalandhar, Punjab, IN.',
     bullets: [
       'Developed responsive, mobile-first interfaces using HTML5, CSS3, JavaScript, React.js and Bootstrap 5.',
@@ -58,8 +66,8 @@ export default function Timeline() {
           ))}
           <motion.li className="tl-item tl-next" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7 }}>
             <time>Now</time>
-            <h3>Open to the next chapter</h3>
-            <p>Focused on opportunities combining Front-End Development, BI Analysis / Development, dashboards, reporting and data-driven business systems. <a href="#contact">Let&apos;s talk</a>.</p>
+            <h3>Settling into the role</h3>
+            <p>About a month in, I&apos;m learning how the plants run and building on FMS, IMS and PMS while keeping the company websites up to date. <a href="#contact">Let&apos;s talk</a>.</p>
           </motion.li>
         </ol>
       </div>
